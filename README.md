@@ -70,10 +70,10 @@ The second step is to consider scaling issues.
 
 The input for this challenge are reservation_dataset.csv and merchant_dataset.csv(you can find them in this repo).
 
-* Exclude all the reservations with badly formatted email addresses. Note that the email addresses have been anonymized on purpose.
-* Print the average number of seated guests
-* Display the name of the merchant with the highest amount of seated guests from the merchant_csv dataset. Reservations with only 1 seated guest shouldn’t be considered for this analysis.
-* Display the name of the merchant with the highest amount of reservations for each quarter of the year (January, February, March;  April, May, June ...).
+1. Exclude all the reservations with badly formatted email addresses. Note that the email addresses have been anonymized on purpose.
+2. Print the average number of seated guests
+3. Display the name of the merchant with the highest amount of seated guests from the merchant_csv dataset. Reservations with only 1 seated guest shouldn’t be considered for this analysis.
+4. Display the name of the merchant with the highest amount of reservations for each quarter of the year (January, February, March;  April, May, June ...).
 
 Please provide a dockerized program that can execute all 3 tasks sequentially.  
 
@@ -82,7 +82,7 @@ Bonus points if it comes with a script that allows us to use a different set of 
 
 ### Scaling 
 
-Does your solution scale for any/all of the subtasks(1-3)? 
+Does your solution scale for any/all of the subtasks(1-4)? 
 
 In other words, would it still work if reservation_dataset.csv and merchant_dataset.csv were both 500G+ files? 
 
