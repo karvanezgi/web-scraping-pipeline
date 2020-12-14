@@ -91,7 +91,7 @@ If not, try to come up with an upgraded version of the program that would handle
 If the solution that you have in mind is too complex or time-consuming to implement, describe what you would use and how it would fit together, or provide a diagram. 
 
 
-## Submitting your solution
+## Submitting your solutions
 
 * Fork it to a [!]private[!] gitlab repository (go to Settings -> General -> Visibility, project features, permissions -> Project visibility).
 * Commit&Push your solutions(including all the diagrams, descriptions and code)
