@@ -2,11 +2,11 @@
 
 Hello and thank you for applying for the Data Engineer position at Quandoo!
 
-To help us better assess your technical skills, we have prepared a set of challenges for you. There are 3 separate problems that we would like you to consider.
+To help us better assess your technical skills, we have prepared a set of tasks for you.
 
 In order to succeed, it is not 100% necessary to finish all the tasks. Quality is more important than quantity.
 
-These challenges attempt to mimic the 3 most common types of problems that our data engineers encounter at Quandoo: 
+These tasks attempt to mimic the 3 most common types of problems that our data engineers encounter at Quandoo: 
 
 * designing data pipelines
  
@@ -21,7 +21,7 @@ The preferred way to submit your work is to create a merge request. If this is n
 Now, the tasks!
 
 
-## Challenge 1 - Data pipeline architecture 
+## Task 1 - Data pipeline architecture 
 We want to help our salespeople find new clients who might be interested in our products. 
 In order to do that, we want to crawl around 10 million web pages that contain info about these potential clients.
 The data should be stored in(or readable as), the JSON format, and should satisfy a specific schema(let's say something like `{"name", "phone", "email"}`).
@@ -39,7 +39,7 @@ No need to go too deep: you don’t have to decide on specific libraries, langua
 
 Please, compose an architecture diagram or a description - in any format you want - as a solution for the task. 
 
-## Challenge 2 - SQL 
+## Task 2 - SQL 
 We have a table that contains our “merchants”(restaurants).
 For each merchant we might have more than one row, where each row represents the state of the merchant at the time indicated by the timestamp field.
 Write an SQL query that returns the last state of each merchant. 
@@ -56,7 +56,7 @@ Write two(or more) SQL queries that both return the last state of each of the me
 
 You can find some sample data in sql_challenge_dataset.csv.
 
-## Challenge 3 - Data Processing with Python/Scala
+## Task 3 - Data Processing with Python/Scala
 
 You can complete the challenge using either Python or Scala.
 
