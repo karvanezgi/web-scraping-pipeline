@@ -75,7 +75,7 @@ The input for this challenge are reservation_dataset.csv and merchant_dataset.cs
 3. Display the name of the merchant with the highest amount of seated guests from the merchant_csv dataset. Reservations with only 1 seated guest shouldn’t be considered for this analysis.
 4. Display the name of the merchant with the highest amount of reservations for each quarter of the year (January, February, March;  April, May, June ...).
 
-Please provide a dockerized program that can execute all 3 tasks sequentially.  
+Please provide a dockerized program that can execute all the tasks sequentially.  
 
 Bonus points if it comes with a script that allows us to use a different set of files as the input(with the same structure, of course).
 
