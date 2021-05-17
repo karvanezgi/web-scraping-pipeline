@@ -14,7 +14,7 @@ These tasks attempt to mimic the 3 most common types of problems that our data e
  
 * writing scalable, maintainable Python/Scala code 
 
-If you're not sure whether you can make certain assumptions (for example, about the input data) you can either make up your own reasonable assumptions(in which case make sure to communicate them when submitting your work), or discuss it with us (aleksandr.kurilov@quandoo.com or create an Issue here).
+If you're not sure whether you can make certain assumptions (for example, about the input data) you can either make up your own reasonable assumptions(in which case make sure to communicate them when submitting your work), or discuss it with us (nikita.belokopytov@quandoo.com or create an Issue here).
 
 The preferred way to submit your work is described at the end of this readme. If you would like to use a different method, write to us and let's discuss it.
 
