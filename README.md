@@ -14,7 +14,7 @@ These tasks attempt to mimic the 3 most common types of problems that our data e
  
 * writing scalable, maintainable Python/Scala code 
 
-If you're not sure whether you can make certain assumptions (for example, about the input data) you can either make up your own reasonable assumptions(in which case make sure to communicate them when submitting your work), or discuss it with us (nikita.belokopytov@quandoo.com or create an Issue here).
+If you're not sure whether you can make certain assumptions (for example, about the input data) you can either make up your own reasonable assumptions(in which case make sure to communicate them when submitting your work), or discuss it with us (data.engineering@quandoo.com or create an Issue here).
 
 The preferred way to submit your work is described at the end of this readme. If you would like to use a different method, write to us and let's discuss it.
 
@@ -95,7 +95,7 @@ If the solution that you have in mind is too complex or time-consuming to implem
 
 * Fork it to a [!]private[!] gitlab repository (go to Settings -> General -> Visibility, project features, permissions -> Project visibility).
 * Commit&Push your solutions(including all the diagrams, descriptions and code)
-* Share the project with the gitlab user quandoo_recruitment_task (go to Settings -> Members -> Invite member, find the user in Select members to invite and set Choose a role permission to Developer)
+* Share the project with the gitlab group quandoo-dev (go to Settings -> Members -> Invite group, find the group in Select group to invite and set Choose a role permission to Developer)
 * Send us an ssh clone link to the repository.
 
 We are looking forward to discussing your solutions with you. Good luck!
