@@ -95,7 +95,7 @@ If the solution that you have in mind is too complex or time-consuming to implem
 
 * Fork it to a [!]private[!] gitlab repository (go to Settings -> General -> Visibility, project features, permissions -> Project visibility).
 * Commit&Push your solutions(including all the diagrams, descriptions and code)
-* Share the project with the gitlab user quandoo_recruitment_task (go to Settings -> Members -> Invite member, find the user in Select members to invite and set Choose a role permission to Developer)
+* Share the project with the gitlab users @martin.marks @sachin2128 (go to Settings -> Members -> Invite member, find the user in Select members to invite and set Choose a role permission to Developer)
 * Send us an ssh clone link to the repository.
 
 We are looking forward to discussing your solutions with you. Good luck!
