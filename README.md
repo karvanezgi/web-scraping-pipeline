@@ -1,101 +1,102 @@
-# Data Engineering Challenge
+# Data Engineering test assignment
 
-Hello and thank you for applying for the Data Engineer position at Quandoo!
+## Intro
+Hello and thank you for applying for the Data Engineer position at Quandoo! 
+We do hope the work on the task will be interesting for you and help us to know each other better.
 
-To help us better assess your technical skills, we have prepared a set of tasks for you.
+In the nutshell a small system to collect and process restaurant data should be built.
 
-In order to succeed, it is not 100% necessary to finish all the tasks. Quality is more important than quantity.
+The completion of the whole task could be challenging. Hence, it's split on the mandatory(A) and the extra parts(B&C).
 
-These tasks attempt to mimic the 3 most common types of problems that our data engineers encounter at Quandoo: 
+## The motivation:
+In general the motive of the task is to get a vision of the candidate's ability to:
+1. Demonstrate problem solving skills
+2. Demonstrate ability of the candidate not only to build pipelines but also think set up the deployment and CI/CD processes 
+3. Let the candidate catch a glimpse of what work at Quandoo looks like
+4. Get a closer look at the coding/documenting skills of the candidate  
 
-* designing data pipelines
- 
-* writing SQL
- 
-* writing scalable, maintainable Python/Scala code 
+## Points to consider:
+1. Below a frame of the system can be found. There are mandatory parts and extra ones
+3. If the full solution that you have in mind is too complex or time-consuming to implement, describe your idea and provide a diagram if it makes sense for you
+4. Please do a proper documentation of what was done and why
 
-If you're not sure whether you can make certain assumptions (for example, about the input data) you can either make up your own reasonable assumptions(in which case make sure to communicate them when submitting your work), or discuss it with us (data.engineering@quandoo.com or create an Issue here).
+## The mandatory part(A)
+### The sourcer
+* Build an app to scrape/fetch data from a website which contains restaurants data and publishes the data to the DB
+* An API can be used to get the data as well as scraping process
+* The app should be able to fetch restaurant's data of Berlin(or certain zone of Berlin)
 
-The preferred way to submit your work is described at the end of this readme. If you would like to use a different method, write to us and let's discuss it.
+**Suggestions**:
+* To use this data API [source](https://location.foursquare.com/). `Place search` route can be used to retrieve restaurants and `Get Place Details` route to get place details
+* To scrape data using geo_id. For retrieving pages https://www.tripadvisor.com/RestaurantSearch?Action=PAGE&geo=187323&sortOrder=relevance&o=a{page_number} url can be used
 
-Now, the tasks!
+Any other open data sources could be used to fetch data.
 
-
-## Task 1 - Data pipeline architecture 
-We want to help our salespeople find new clients who might be interested in our products. 
-In order to do that, we want to crawl around 10 million web pages that contain info about these potential clients.
-The data should be stored in(or readable as), the JSON format, and should satisfy a specific schema(let's say something like `{"name", "phone", "email"}`).
-The end result should be some type of a DB table/Kafka topic/some other storage that contains this data.
-We want to minimize data latency and avoid unnecessary financial costs as well.
-In other words, the data should be updated as often as possible and as cheaply as possible.
-How would you design such a system? 
-You might consider, for example
-* which programming language to use
-* which distributed computing engine to use
-* which cloud services to use
-* which algorithms, broadly speaking, to use 
-
-No need to go too deep: you don’t have to decide on specific libraries, language/engine/service-specific tools or super-precise configurations for the aforementioned products or cloud services.
-
-Please, compose an architecture diagram or a description - in any format you want - as a solution for the task. 
-
-## Task 2 - SQL 
-We have a table that contains our “merchants”(restaurants).
-For each merchant we might have more than one row, where each row represents the state of the merchant at the time indicated by the timestamp field.
-Write an SQL query that returns the last state of each merchant. 
- 
-| Field Name | Data Type  |  Description |
-|---|---|---|
-| merchant_id  |  STRING |  Merchant Identifier |
-| timestamp  |  INTEGER |  Merchant state timestamp|
-| createdAt  |  INTEGER |  Merchant creation timestamp |
-| cuisines_additional | STRING | Merchant’s additional cuisines |
-| priceRange| INTEGER | Price range category | 
- 
-Write two(or more) SQL queries that both return the last state of each of the merchants and outline their advantages and disadvantages(for example, how many times is the source table scanned)?
-
-You can find some sample data in sql_challenge_dataset.csv.
-
-## Task 3 - Data Processing with Python/Scala
-
-You can complete the challenge using either Python or Scala.
-
-The goal here is to analyze our 2020 reservations. 
-
-The first step is to create a program that would reliably work with the given inputs(reservation_dataset.csv and merchant_dataset.csv).
-
-The second step is to consider scaling issues.
-
-### Making it work with the given inputs
-
-The input for this challenge are reservation_dataset.csv and merchant_dataset.csv(you can find them in this repo).
-
-1. Exclude all the reservations with badly formatted email addresses. Note that the email addresses have been anonymized on purpose.
-2. Print the average number of seated guests
-3. Display the name of the merchant with the highest amount of seated guests from the merchant_csv dataset. Reservations with only 1 seated guest shouldn’t be considered for this analysis.
-4. Display the name of the merchant with the highest amount of reservations for each quarter of the year (January, February, March;  April, May, June ...).
-
-Please provide a dockerized program that can execute all the tasks sequentially.  
-
-Bonus points if it comes with a script that allows us to use a different set of files as the input(with the same structure, of course).
+**Extra improvements suggestions**:
+* To have a schedule for the sourcer to run(daily/hourly/monthly)
+* Think how to fetch only new data 
+* Think how to fetch other cities 
 
 
-### Scaling 
+### The database
+* Deploy a database. The database is expected to be supported by [DBT](https://docs.getdbt.com/docs/supported-data-platforms)
+* Build the initial database layer to store the sourcer data
+* Build Datamarts layer to store calculated data
+* Add more layers if it's needed
 
-Does your solution scale for any/all of the subtasks(1-4)? 
+**Suggestions**:
+* Use PostgreSQL, Greenplum, Clickhouse, Hive
+* Datamarts should contain possibly valuable insights 
 
-In other words, would it still work if reservation_dataset.csv and merchant_dataset.csv were both 500G+ files? 
+### The DWH
+* [Use DBT](https://getdbt.com) to process data from the raw to the Datamarts layers
+* Consider how to update Datamarts on a certain schedule(hourly, daily)
+* Up to the candidate to suggest which marts could be built and the structure of the tables
 
-If not, try to come up with an upgraded version of the program that would handle bigger inputs.
+**Extra improvements suggestions**:
+* Use extra features of DBT. Like metrics, exposures, ..
 
-If the solution that you have in mind is too complex or time-consuming to implement, describe what you would use and how it would fit together, or provide a diagram. 
+### The deployment
+* Dockerize all the pipelines
 
+**Suggestions**:
+* To deploy a K8s cluster locally and use Helm charts releases
+* Use Docker Composer to run all the containers
+
+### All jobs notes
+* Please provide the proper documentation and description how to run the test assignment and see how it works
+* The deployment of all the components should be easy to use. Like a pushing a 1-2 buttons. Feel free to use Bash if it's needed
+* The solution is expected to be runnable on Mac and Linux
+* Please consider the database to be the DWH. The data can be denormalized
+* It would be great to think about scaling the system
+
+## The extra part
+
+### BI visualisation tool(B)
+Add a visualisation tool to have dashboards
+
+**Suggestions**:
+* Use Tableau
+* Use PowerBI
+
+### Add Data Lake layer(C)
+Add a raw data storage to store scraper data and add a pipeline to deliver the raw data to the DB
+
+**Suggestions**:
+* Use S3 minio
+
+### Any extra components
+Feel free to suggest any extra components you probably have experience with(adding a queue, monitoring, more DBs)
+In this case please provide a diagram alongside with the description to justify your chooses
+
+The described part of the test task can be seen on the diagram
+![test_task.png](./test_task.png)
 
 ## Submitting your solutions
 
 * Fork it to a [!]private[!] gitlab repository (go to Settings -> General -> Visibility, project features, permissions -> Project visibility).
 * Commit&Push your solutions(including all the diagrams, descriptions and code)
-* Share the project with the gitlab users @martin.marks @sachin2128 (go to Settings -> Members -> Invite member, find the user in Select members to invite and set Choose a role permission to Developer)
+* Share the project with the gitlab users: @martin.marx @sachin.nair2 @tamizhselvan.kandasamy @elmehdi.elkhayati (go to Settings -> Members -> Invite member, find the user in Select members to invite and set Choose a role permission to Developer)
 * Send us an ssh clone link to the repository.
 
 We are looking forward to discussing your solutions with you. Good luck!
