@@ -44,7 +44,7 @@ Any other open data sources could be used to fetch data
 * Add more layers if it's needed
 
 **Suggestions for the Datamarts**:
-* Calculated data of how much cousin types(German, Italian, ..) are ingested per a price range($, $$, $$-$$$, .. in Tripadvisor)
+* Calculated data of how much cousin types(German, Italian, ..) are ingested per a price range($, $$-$$$, .. in Tripadvisor)
 * Calculated data of review ratings in the DWH per cuisine type (Indian, Italian, …)
 * Count of different cuisines ingested per ingestion date. It means if there is data for several days then the Datamart should contain counts against each date
 * Counts of different price ranges ingested per ingestion date. It means if there is data for several days then the Datamart should contain counts against each date
