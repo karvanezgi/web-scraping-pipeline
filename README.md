@@ -19,6 +19,7 @@ In general the motive of this task is to:
 2. If the full solution that you have in mind is too complex or time-consuming to implement, provide an architectural diagram and describe your idea in detail
 3. We highly appreciate a document containing the details of what was done and why
 4. **Suggested points are not mandatory**. Feel free to use any technology/source you consider to be the best
+5. If for any reasons you're not able to complete the mandatory part then please share what was done, and we can discuss it
 
 
 ## The Mandatory Part(A)
@@ -74,7 +75,7 @@ Any other open data sources could be used to fetch data
   Feel free to suggest any extra components you probably have experience with(adding a queue, monitoring, more DBs)
   In this case please provide a diagram alongside with the description to justify your choices
 
-### The described part of the test task can be seen on this diagram :
+### The described part of the test task can be seen on this diagram
 
 ![test_task.png](./test_task.png)
 
