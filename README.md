@@ -19,7 +19,7 @@ In general the motive of this task is to:
 2. If the full solution that you have in mind is too complex or time-consuming to implement, provide an architectural diagram and describe your idea in detail
 3. We highly appreciate a document containing the details of what was done and why
 4. **Suggested points are not mandatory**. Feel free to use any technology/source you consider to be the best
-5. If for any reasons you're not able to complete the mandatory part then please share what was done, and we can discuss it
+5. It's better to cover all parts of the system at certain level than making a perfect implementation of a single piece and skipping or doing poorly the rest
 
 
 ## The Mandatory Part(A)
