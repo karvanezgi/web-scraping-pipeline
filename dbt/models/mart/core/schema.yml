@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: core
+    database: airflow
+    schema: public
+    description: A replica of the postgres database.
+
+models:
+  - name: core_restaurants
+    columns:
+      - name: count
+        description: "The primary key for this table"
+        tests:
+          - not_null

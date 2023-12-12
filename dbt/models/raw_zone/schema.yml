@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: raw_zone
+    database: airflow
+    schema: public
+    description: A replica of the postgres database.
+    tables:
+      - name: restaurants
+        columns:
+          - name: name
+            description: Primary key of the table
+            tests:
+              - not_null
+
+models:
+  - name: stg_restaurants
+    columns:
+      - name: count
+        description: "The primary key for this table"
+        tests:
+          - not_null
