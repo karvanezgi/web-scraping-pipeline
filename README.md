@@ -26,7 +26,9 @@ With dbt;
 ## Get started
 
 
-After making sure docker deamon is up and running, run following commands in the project directory.
+1. Copy .env.example file as .env in the project directory.
+
+2. After making sure docker deamon is up and running, run following commands in the project directory.
 
  ```bash
  docker build . --tag extending_airflow:latest
@@ -40,7 +42,7 @@ After making sure docker deamon is up and running, run following commands in the
 
  ![plot](./project-instructions/images/docker_image.png)
 
- We need to add postgres connection for airflow with following steps.
+3. We need to add postgres connection for airflow with following steps.
 
 Please check if web server's image name needs replacement with the one that have created.
 
@@ -59,7 +61,7 @@ docker exec -it data-engineer_airflow-webserver_1 bash
     }'
  ```
 
-We are all set up. You can open up airflow UI  `http://localhost:8080/`
+4. We are all set up. You can open up airflow UI  `http://localhost:8080/`
 
 Credentials are;
 - user: airflow
