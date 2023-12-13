@@ -42,9 +42,7 @@ With dbt;
 
  ![plot](./project-instructions/images/docker_image.png)
 
-3. We need to add postgres connection for airflow with following steps.
-
-Please check if web server's image name needs replacement with the one that have created.
+3. We need to add postgres connection for airflow with following steps. Please check if web server's image name needs replacement with the one that have created.
 
  ```bash
 docker exec -it data-engineer_airflow-webserver_1 bash
