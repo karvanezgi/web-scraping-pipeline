@@ -67,7 +67,7 @@ Credentials are;
 
 You will see the dags are listed in the UI.
 
-- create_tables DAG will be run as soon as UI is started.
+- create_tables DAG will be run as soon as UI is started. If it is not started please run it manually.
 - run_data_pipeline DAG will be run in daily bases which containes 2 different DAG triggers in it as showed [here](#dags-diagram). Feel free to run the DAG to not wait for the scheduled time.
 
  ![plot](./project-instructions/images/airflow_ui.png)
