@@ -2,9 +2,13 @@
 
 with final as (
 
-    select category, price_range, count(*) as count
+    select 
+    category, 
+    price_range, 
+    count(*) as count
     from {{ ref('core_restaurants') }}
-    group by category, price_range
+    group by 
+    category, price_range
 
 )
 

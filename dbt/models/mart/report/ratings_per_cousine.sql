@@ -2,7 +2,10 @@
 
 with final as (
 
-    select rating, category, count(*) as count
+    select 
+    rating, 
+    category, 
+    count(*) as count
     from {{ ref('core_restaurants') }}
     where rating is not null
     group by category, rating
