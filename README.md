@@ -12,11 +12,11 @@ To be able to solve the data engineer task, I used following technologies.
 5. Docker compose to build dockerized pipeline.
 
 
-App is scrapping restaurants data for spesific location which is setted 'berlin' for demonstration purposes in the script. After scrapping, it is writing data to `restaurants` table. Each time airflow run the pipeline the table trucate and data is inserted.
+App is scraping restaurants data for spesific location which is setted 'berlin' for demonstration purposes in the script. After scrapping, it is writing data to `restaurants` table. Each time airflow run the pipeline the table trucate and data is inserted.
 
 With dbt;
  - `stg_restaurants` is a replica of `restaurants` table.
- - `core_restaurants` table is feeding with `stg_restaurants` table. Load type can be changed to incremental after the first load. There is data transformation in between, such as assigning NULL to rating field if rating is '' in staging table.
+ - `core_restaurants` table is feeding with `stg_restaurants` table. Load type can be changed to incremental after the first load. There is also data transformation in between, such as assigning NULL to rating field if rating is '' in staging table.
  - `ratings_per_cousine`, `cousines_per_price_range`, `cousines_per_ingestion_date` has been created for reporting purposes from `core_restaurants` table.
 
 
