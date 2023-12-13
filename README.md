@@ -70,7 +70,7 @@ Credentials are;
 You will see the dags are listed in the UI.
 
 - create_tables DAG will be run as soon as UI is started.
-- run_data_pipeline DAG will be run in daily bases which containes 2 different DAG triggers in it as showed [here](#dag-diagram). Feel free to run the DAG to not wait for the scheduled time.
+- run_data_pipeline DAG will be run in daily bases which containes 2 different DAG triggers in it as showed [here](#dags-diagram). Feel free to run the DAG to not wait for the scheduled time.
 
  ![plot](./project-instructions/images/airflow_ui.png)
 
@@ -101,6 +101,6 @@ docker-compose exec postgres psql -U airflow -c "SELECT * FROM cousines_per_pric
 docker-compose exec postgres psql -U airflow -c "SELECT * FROM cousines_per_ingestion_date;” airflow
 ```
 
-## Dag Diagram
+## Dags Diagram
 
 ![plot](./project-instructions/images/dag_flow.jpg)
