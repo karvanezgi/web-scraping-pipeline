@@ -8,15 +8,27 @@ sources:
     tables:
       - name: restaurants
         columns:
+          - name: id
+            description: "Primary key of the table"
           - name: name
-            description: Primary key of the table
-            tests:
-              - not_null
+            description: "Name of the restaurant"
+          - name: category
+            description: "Cousine category of the restaurant"
+          - name: price_range
+            description: "Price range of the restaurant"
+          - name: rating
+            description: "Rating of the restaurant between 0-6 if there is no rating field will be null"  
 
 models:
   - name: stg_restaurants
     columns:
-      - name: count
-        description: "The primary key for this table"
-        tests:
-          - not_null
+      - name: id
+        description: "Primary key of the table"
+      - name: name
+        description: "Name of the restaurant"
+      - name: category
+        description: "Cousine category of the restaurant"
+      - name: price_range
+        description: "Price range of the restaurant"
+      - name: rating
+        description: "Rating of the restaurant between 0-6 if there is no rating field will be null"  

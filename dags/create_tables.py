@@ -42,7 +42,22 @@ with dag:
         postgres_conn_id = "postgres_default",
         sql = """
             CREATE TABLE if not exists core_restaurants(
-            id serial, name VARCHAR (250)  NOT NULL, category VARCHAR (250), price_range integer, rating VARCHAR (10)
+            id serial, name VARCHAR (250) NOT NULL, category VARCHAR (250), price_range integer, rating VARCHAR (10), ingestion_date date
             )
         """,
+    )    
+    create_dbt_report_tables = PostgresOperator(
+        task_id = 'create_dbt_report_tables',
+        postgres_conn_id = "postgres_default",
+        sql = """
+            CREATE TABLE if not exists ratings_per_cousine(
+            id serial,rating VARCHAR (10), category VARCHAR (250), count integer
+            );
+            CREATE TABLE if not exists cousines_per_price_range(
+            id serial, category VARCHAR (250), price_range integer, count integer
+            );
+            CREATE TABLE if not exists cousines_per_ingestion_date(
+            id serial, category VARCHAR (250), ingestion_date date, count integer
+            );
+        """,    
     )

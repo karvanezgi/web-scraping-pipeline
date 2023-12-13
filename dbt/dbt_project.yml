@@ -38,3 +38,6 @@ models:
     mart:
       core: 
          +materialized: table
+      report: 
+         +materialized: table
+   

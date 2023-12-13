@@ -9,7 +9,15 @@ sources:
 models:
   - name: core_restaurants
     columns:
-      - name: count
-        description: "The primary key for this table"
-        tests:
-          - not_null
+      - name: id
+        description: "Id of the restaurant"
+      - name: name
+        description: "Name of the restaurant"
+      - name: category
+        description: "Cousine category of the restaurant"
+      - name: price_range
+        description: "Price range of the restaurant"
+      - name: rating
+        description: "Rating of the restaurant between 0-6 if there is no rating field will be null"
+      - name: ingestion_date
+        description: "Ingestion date of the restaurant"    

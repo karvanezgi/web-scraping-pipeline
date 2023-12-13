@@ -1,0 +1,52 @@
+version: 2
+
+sources:
+  - name: core
+    database: airflow
+    schema: public
+    description: A replica of the postgres database.
+    tables:
+      - name: core_restaurants
+        columns:
+          - name: id
+            description: "Primary key of the table"
+          - name: name
+            description: "Name of the restaurant"
+          - name: category
+            description: "Cousine category of the restaurant"
+          - name: price_range
+            description: "Price range of the restaurant"
+          - name: rating
+            description: "Rating of the restaurant between 0-6 if there is no rating field will be null"  
+
+models:
+  - name: ratings_per_cousine
+    columns:
+      - name: id
+        description: "Primary key of the table"
+      - name: category
+        description: "Cousine category of the restaurant"
+      - name: rating
+        description: "Price range of the restaurant"
+      - name: count
+        description: "Count of the ratings for each cousine"
+  - name: cousines_per_price_range
+    columns:
+      - name: id
+        description: "Primary key of the table"
+      - name: category
+        description: "Cousine category of the restaurant"
+      - name: price_range
+        description: "Price range of the restaurant"
+      - name: count
+        description: "Count of the cousine for each price range"
+  - name: cousines_per_ingestion_date
+    columns:
+      - name: id
+        description: "Primary key of the table"
+      - name: category
+        description: "Cousine category of the restaurant"
+      - name: ingestion_date
+        description: "Price range of the restaurant"
+      - name: count
+        description: "Count of the cousines for each ingestion_date"              
