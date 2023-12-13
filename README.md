@@ -76,27 +76,27 @@ You will see the dags are listed in the UI.
  - You can run following commands to check the data in staging, core and reporting layers.
 
  ```bash
-docker-compose exec postgres psql -U airflow -c "SELECT * FROM restaurants;” airflow
+docker-compose exec postgres psql -U airflow -c "SELECT * FROM restaurants;" airflow
 ```
 
  ```bash
-docker-compose exec postgres psql -U airflow -c "SELECT * FROM stg_restaurants;” airflow
+docker-compose exec postgres psql -U airflow -c "SELECT * FROM stg_restaurants;" airflow
 ```
 
  ```bash
-docker-compose exec postgres psql -U airflow -c "SELECT * FROM core_restaurants;” airflow
+docker-compose exec postgres psql -U airflow -c "SELECT * FROM core_restaurants;" airflow
 ```
 
  ```bash
-docker-compose exec postgres psql -U airflow -c "SELECT * FROM ratings_per_cousine;” airflow
+docker-compose exec postgres psql -U airflow -c "SELECT * FROM ratings_per_cousine;" airflow
 ```
 
  ```bash
-docker-compose exec postgres psql -U airflow -c "SELECT * FROM cousines_per_price_range;” airflow
+docker-compose exec postgres psql -U airflow -c "SELECT * FROM cousines_per_price_range;" airflow
 ```
 
  ```bash
-docker-compose exec postgres psql -U airflow -c "SELECT * FROM cousines_per_ingestion_date;” airflow
+docker-compose exec postgres psql -U airflow -c "SELECT * FROM cousines_per_ingestion_date;" airflow
 ```
 
 ## Dags Diagram
