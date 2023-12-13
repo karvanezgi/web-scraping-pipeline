@@ -57,8 +57,6 @@ def load_data_to_raw_zone():
             query.append(f"INSERT INTO public.restaurants(name, category, price_range, rating) VALUES{restaurant};")
     
     query = build_query(query)
-    print(query)
-
 
     try:     
         #connection for the database
@@ -72,6 +70,9 @@ def load_data_to_raw_zone():
         
         cur = conn.cursor()
 
+        #truncate table before loading the data
+        cur.execute("TRUNCATE TABLE public.restaurants")
+        #load data
         cur.execute(query)
 
         conn.commit()    

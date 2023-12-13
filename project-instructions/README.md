@@ -77,7 +77,7 @@ Any other open data sources could be used to fetch data
 
 ### The described part of the test task can be seen on this diagram
 
-![test_task.png](./test_task.png)
+![test_task.png](./images/test_task.png)
 
 ## Things to consider before submitting
 * Please provide a detailed document describing how to run the test assignment
