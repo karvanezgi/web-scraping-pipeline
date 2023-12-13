@@ -26,7 +26,7 @@ with dag:
     
     run_dbt_models = TriggerDagRunOperator(
         task_id = "run_dbt_models",
-        trigger_dag_id = "dbt_daily_dag",
+        trigger_dag_id = "run_dbt_models",
         wait_for_completion = True
     )
 
