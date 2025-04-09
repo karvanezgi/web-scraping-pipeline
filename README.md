@@ -2,8 +2,7 @@
 
 ## Architecture Diagram
 
-To be able to solve the data engineer task, I used following technologies.
-
+This web scraping project is structured to execute the following sequence of operations.
 
 1. Python to scrap restaurants data from https://www.quandoo.de/en/result?destination={location}
 2. Postgres for the database.
@@ -20,7 +19,7 @@ With dbt;
  - `ratings_per_cousine`, `cousines_per_price_range`, `cousines_per_ingestion_date` has been created for reporting purposes from `core_restaurants` table.
 
 
-![plot](./project-instructions/images/architecture.jpg)
+![plot](./assets/images/architecture.jpg)
 
 
 ## Get started
@@ -40,7 +39,7 @@ With dbt;
 
  These steps will create postgres, dbt, airflow scheduler and webserver.
 
- ![plot](./project-instructions/images/docker_image.png)
+ ![plot](./assets/images/docker_image.png)
 
 3. We need to add postgres connection for airflow with following steps. Please check if web server's image name needs replacement with the one that have created.
 
@@ -70,7 +69,7 @@ You will see the dags are listed in the UI.
 - create_tables DAG will be run as soon as UI is started. If it is not started, please run it manually.
 - run_data_pipeline DAG will be run in daily bases which containes 2 different DAG triggers in it as showed [here](#dags-diagram). Feel free to run the DAG to not wait for the scheduled time.
 
- ![plot](./project-instructions/images/airflow_ui.png)
+ ![plot](./assets/images/airflow_ui.png)
 
 
  - You can run following commands to check the data in staging, core and reporting layers.
@@ -101,4 +100,4 @@ docker-compose exec postgres psql -U airflow -c "SELECT * FROM cousines_per_inge
 
 ## Dags Diagram
 
-![plot](./project-instructions/images/dag_flow.jpg)
+![plot](./assets/images/dag_flow.jpg)
